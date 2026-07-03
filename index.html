@@ -7,23 +7,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg-mist:#EDE7F6;
-    --surface:#FFFFFF;
-    --ink:#2A1B3D;
-    --ink-soft:#6B5B7A;
-    --coin:#F2A65A;
-    --coin-deep:#C97F35;
-    --mint:#7FCFA4;
-    --mint-soft:#E3F5EC;
-    --line:#DDD4EC;
-    --warn:#E4785C;
-    --lav:#B7A6E0;
+    /* Phantom of the Opera Blue/Slate Theme */
+    --bg-mist: #F0F2F6; 
+    --surface: #FFFFFF;
+    --ink: #242A35;
+    --ink-soft: #637083;
+    --coin: #8799B5;
+    --coin-deep: #4A5B73;
+    --mint: #7C98B6;
+    --mint-soft: #E6ECF2;
+    --line: #D1D8E0;
+    --warn: #E4785C;
+    --lav: #9AA6B8;
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
     font-family:'Plus Jakarta Sans',sans-serif;
-    background:linear-gradient(160deg,#E4DEF6,#D9CFF0 60%,#EDE7F6);
+    /* Dark slate blue background matching the screenshot */
+    background: #242A35;
     min-height:100vh;
     display:flex;align-items:center;justify-content:center;
     padding:28px 12px;
@@ -35,7 +37,7 @@
     height:780px;
     background:var(--bg-mist);
     border-radius:38px;
-    box-shadow:0 30px 60px -20px rgba(42,27,61,0.45), 0 0 0 10px #1c1226;
+    box-shadow:0 30px 60px -20px rgba(28, 35, 46, 0.6), 0 0 0 10px #181d25;
     overflow:hidden;
     position:relative;
     display:flex;flex-direction:column;
@@ -49,7 +51,7 @@
     flex:0 0 auto;padding:2px 20px 14px;
     display:flex;align-items:center;justify-content:space-between;
   }
-  .wordmark{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:22px;letter-spacing:-0.5px;}
+  .wordmark{font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-0.5px;}
   .wordmark span{color:var(--coin-deep);font-style:normal;}
   .coinpill{
     display:flex;align-items:center;gap:6px;
@@ -104,9 +106,9 @@
     cursor:pointer;text-align:center;
   }
   .btn-primary{background:var(--ink);color:#fff;}
-  .btn-primary:disabled{background:#C6BFD6;cursor:not-allowed;}
+  .btn-primary:disabled{background:#A0AAB8;cursor:not-allowed;}
   .btn[disabled]{opacity:0.55;cursor:not-allowed;}
-  .btn-mint{background:var(--mint);color:#173323;}
+  .btn-mint{background:var(--mint);color:#fff;}
   .btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);}
   .btn-warn{background:var(--warn);color:#fff;}
   .btn-sm{padding:9px 14px;font-size:12.5px;border-radius:10px;width:auto;}
@@ -120,7 +122,7 @@
   .tl-item::before{content:"";position:absolute;left:9px;top:22px;bottom:0;width:2px;background:var(--line);}
   .tl-item:last-child::before{display:none;}
   .tl-dot{width:20px;height:20px;border-radius:50%;flex:0 0 20px;display:flex;align-items:center;justify-content:center;font-size:10px;background:var(--line);color:transparent;}
-  .tl-dot.done{background:var(--mint);color:#173323;}
+  .tl-dot.done{background:var(--mint);color:#fff;}
   .tl-label{font-weight:700;font-size:13.5px;}
   .tl-time{font-size:11.5px;color:var(--ink-soft);margin-top:1px;}
   .notif{
@@ -146,7 +148,7 @@
     font-size:9px;font-weight:700;border-radius:999px;padding:1px 5px;min-width:14px;text-align:center;
   }
   .slider{width:100%;accent-color:var(--ink);}
-  .walletcard{background:linear-gradient(135deg,#2A1B3D,#4A2E63);color:#fff;border-radius:20px;padding:22px;margin-bottom:16px;}
+  .walletcard{background:linear-gradient(135deg,#242A35,#3E4859);color:#fff;border-radius:20px;padding:22px;margin-bottom:16px;}
   .walletcard .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.65;}
   .walletcard .bal{font-family:'Fraunces',serif;font-size:38px;font-weight:600;margin:4px 0 10px;}
   .streakwrap{display:flex;gap:5px;margin-top:12px;}
@@ -173,7 +175,7 @@
   }
   .fp-circle.scanning{animation:fpscan 1s ease-in-out infinite;border-color:var(--mint);}
   .fp-circle.success{background:var(--mint-soft);border-color:var(--mint);color:#173323;}
-  @keyframes fpscan{0%,100%{box-shadow:0 0 0 0 rgba(127,207,164,0.45);}50%{box-shadow:0 0 0 16px rgba(127,207,164,0);}}
+  @keyframes fpscan{0%,100%{box-shadow:0 0 0 0 rgba(124,152,182,0.45);}50%{box-shadow:0 0 0 16px rgba(124,152,182,0);}}
   .phone.onboarding .topbar,.phone.onboarding .navbar{display:none;}
   .phone.onboarding .screen{padding-bottom:24px;}
   .onb-wrap{display:flex;flex-direction:column;min-height:100%;padding-top:40px;}
@@ -223,7 +225,7 @@
 <div class="phone">
   <div class="statusbar"><span id="clock">9:41</span><span>Phantom Buy Sandbox</span></div>
   <div class="topbar">
-    <div class="wordmark">👻 Phantom<span>Buy</span></div>
+    <div class="wordmark">Phantom<span>Buy</span></div>
     <div class="coinpill" onclick="go('wallet')"><span class="dot"></span><span id="coinpillnum"></span> PC</div>
   </div>
   <div class="screen" id="screen"></div>
@@ -231,30 +233,30 @@
     <div class="navitem" data-v="home" onclick="go('home')"><span class="ic">🏬</span>Shop</div>
     <div class="navitem" data-v="cart" onclick="go('cart')" style="position:relative;"><span class="ic">🧺</span>Cart<span class="badge" id="cartbadge" style="display:none;"></span></div>
     <div class="navitem" data-v="vault" onclick="go('vault')" style="position:relative;"><span class="ic">🗄️</span>Vault<span class="badge" id="vaultbadge" style="display:none;"></span></div>
-    <div class="navitem" data-v="wallet" onclick="go('wallet')"><span class="ic">👻</span>Wallet</div>
+    <div class="navitem" data-v="wallet" onclick="go('wallet')"><span class="ic">🪙</span>Wallet</div>
   </div>
 </div>
 
 <script>
 const PRODUCTS = [
-  {id:1,name:"Cloudform Wireless Earbuds",cat:"Gadgets",price:129,emoji:"🎧",bg:"#E7E1FA",blurb:"Noise-isolating buds with a matte-soft case, mid-range ANC performance."},
-  {id:2,name:"Iridescent Phone Case",cat:"Gadgets",price:22,emoji:"📱",bg:"#E1F0FA",blurb:"Shifts color in the light. Drop-tested (in the simulation, at least)."},
-  {id:3,name:"Woven Watch Band",cat:"Gadgets",price:19,emoji:"⌚",bg:"#EAE6FA",blurb:"Adjustable nylon weave, brushed clasp. Fits most standard lugs."},
-  {id:4,name:"Aurora Smartwatch",cat:"Gadgets",price:249,emoji:"⌚",bg:"#DDEAF7",blurb:"Heart-rate, sleep, and GPS tracking with a 2-day battery."},
-  {id:5,name:"Portable Bluetooth Speaker",cat:"Gadgets",price:79,emoji:"🔊",bg:"#E5EEF9",blurb:"Water-resistant, 12-hour playtime, surprisingly loud for its size."},
-  {id:6,name:"Flagship Smartphone",cat:"Gadgets",price:999,emoji:"📲",bg:"#E9E4F6",blurb:"Latest-gen chip, triple camera, the one everyone's been eyeing."},
-  {id:7,name:"Trailrunner Knit Sneakers",cat:"Fashion",price:68,emoji:"👟",bg:"#FDEBD8",blurb:"Breathable knit upper, foam sole. That first-unbox smell, simulated faithfully."},
-  {id:8,name:"Oversized Fleece Hoodie",cat:"Fashion",price:54,emoji:"🧥",bg:"#F3E3EC",blurb:"Heavyweight fleece, dropped shoulder. The one you'd wear on a Sunday."},
-  {id:9,name:"Polarized Sunglasses",cat:"Fashion",price:89,emoji:"🕶️",bg:"#F6E9DD",blurb:"UV400 protection, spring hinges, a case included."},
-  {id:10,name:"Canvas Weekender Backpack",cat:"Fashion",price:65,emoji:"🎒",bg:"#F0E5D6",blurb:"Water-resistant canvas, padded laptop sleeve, room for a weekend."},
-  {id:11,name:"Amber Fig Soy Candle",cat:"Home",price:26,emoji:"🕯️",bg:"#FBE6D0",blurb:"40-hour burn, hand-poured. Scent notes: warm fig, cedar, a little vanilla."},
-  {id:12,name:"Ceramic Desk Planter",cat:"Home",price:19,emoji:"🪴",bg:"#E4F3E6",blurb:"Speckled glaze, drainage dish included. Pairs well with a small pothos."},
-  {id:13,name:"Ribbed Throw Blanket",cat:"Home",price:38,emoji:"🧶",bg:"#F1E7F5",blurb:"Chunky knit, machine washable, oversized for couch-draping."},
-  {id:14,name:"Pour-Over Coffee Maker",cat:"Home",price:42,emoji:"☕",bg:"#EFE2D3",blurb:"Glass carafe, reusable filter, the ritual before the caffeine hits."},
-  {id:15,name:"Compact Air Fryer",cat:"Home",price:89,emoji:"🍟",bg:"#F5E9DC",blurb:"3.5-quart basket, one-touch presets, fits on a narrow counter."},
-  {id:16,name:"Tinted Lip Balm Trio",cat:"Beauty",price:15,emoji:"💄",bg:"#FBE2E6",blurb:"Three shades, sheer finish. Comes in a little card sleeve."},
-  {id:17,name:"Niacinamide Serum",cat:"Beauty",price:42,emoji:"🧴",bg:"#FCE8EF",blurb:"10% niacinamide, fragrance-free, the one every routine seems to have."},
-  {id:18,name:"Sonic Electric Toothbrush",cat:"Beauty",price:89,emoji:"🪥",bg:"#E3F1F4",blurb:"Rechargeable, 3 modes, a 2-minute built-in timer."},
+  {id:1,name:"Cloudform Wireless Earbuds",cat:"Gadgets",price:129,emoji:"🎧",bg:"#DFE6F0",blurb:"Noise-isolating buds with a matte-soft case, mid-range ANC performance."},
+  {id:2,name:"Iridescent Phone Case",cat:"Gadgets",price:22,emoji:"📱",bg:"#E8EDF4",blurb:"Shifts color in the light. Drop-tested (in the simulation, at least)."},
+  {id:3,name:"Woven Watch Band",cat:"Gadgets",price:19,emoji:"⌚",bg:"#E3E9F2",blurb:"Adjustable nylon weave, brushed clasp. Fits most standard lugs."},
+  {id:4,name:"Aurora Smartwatch",cat:"Gadgets",price:249,emoji:"⌚",bg:"#D8E0EB",blurb:"Heart-rate, sleep, and GPS tracking with a 2-day battery."},
+  {id:5,name:"Portable Bluetooth Speaker",cat:"Gadgets",price:79,emoji:"🔊",bg:"#E6ECF4",blurb:"Water-resistant, 12-hour playtime, surprisingly loud for its size."},
+  {id:6,name:"Flagship Smartphone",cat:"Gadgets",price:999,emoji:"📲",bg:"#DFE5F0",blurb:"Latest-gen chip, triple camera, the one everyone's been eyeing."},
+  {id:7,name:"Trailrunner Knit Sneakers",cat:"Fashion",price:68,emoji:"👟",bg:"#E8EDF3",blurb:"Breathable knit upper, foam sole. That first-unbox smell, simulated faithfully."},
+  {id:8,name:"Oversized Fleece Hoodie",cat:"Fashion",price:54,emoji:"🧥",bg:"#DFE5F0",blurb:"Heavyweight fleece, dropped shoulder. The one you'd wear on a Sunday."},
+  {id:9,name:"Polarized Sunglasses",cat:"Fashion",price:89,emoji:"🕶️",bg:"#E4EAF1",blurb:"UV400 protection, spring hinges, a case included."},
+  {id:10,name:"Canvas Weekender Backpack",cat:"Fashion",price:65,emoji:"🎒",bg:"#DBE2EE",blurb:"Water-resistant canvas, padded laptop sleeve, room for a weekend."},
+  {id:11,name:"Amber Fig Soy Candle",cat:"Home",price:26,emoji:"🕯️",bg:"#E9EEF5",blurb:"40-hour burn, hand-poured. Scent notes: warm fig, cedar, a little vanilla."},
+  {id:12,name:"Ceramic Desk Planter",cat:"Home",price:19,emoji:"🪴",bg:"#E2E8F2",blurb:"Speckled glaze, drainage dish included. Pairs well with a small pothos."},
+  {id:13,name:"Ribbed Throw Blanket",cat:"Home",price:38,emoji:"🧶",bg:"#DFE5EF",blurb:"Chunky knit, machine washable, oversized for couch-draping."},
+  {id:14,name:"Pour-Over Coffee Maker",cat:"Home",price:42,emoji:"☕",bg:"#E6ECF3",blurb:"Glass carafe, reusable filter, the ritual before the caffeine hits."},
+  {id:15,name:"Compact Air Fryer",cat:"Home",price:89,emoji:"🍟",bg:"#E0E7F1",blurb:"3.5-quart basket, one-touch presets, fits on a narrow counter."},
+  {id:16,name:"Tinted Lip Balm Trio",cat:"Beauty",price:15,emoji:"💄",bg:"#EAEFF6",blurb:"Three shades, sheer finish. Comes in a little card sleeve."},
+  {id:17,name:"Niacinamide Serum",cat:"Beauty",price:42,emoji:"🧴",bg:"#E1E8F2",blurb:"10% niacinamide, fragrance-free, the one every routine seems to have."},
+  {id:18,name:"Sonic Electric Toothbrush",cat:"Beauty",price:89,emoji:"🪥",bg:"#D9E1ED",blurb:"Rechargeable, 3 modes, a 2-minute built-in timer."},
 ];
 const STAGES = ["Placed","Preparing","Shipped","Out for Delivery","Delivered"];
 const STAGE_NOTIFS = [
@@ -327,7 +329,7 @@ function placeOrder(){
   if(total > state.coins || state.cart.length===0) return;
   state.coins -= total;
   const order = {
-    id: "PT-" + Math.floor(1000+Math.random()*9000),
+    id: "PB-" + Math.floor(1000+Math.random()*9000),
     items: state.cart.map(c=>({...findProduct(c.id), qty:c.qty})),
     total,
     stage: 0,
@@ -427,6 +429,7 @@ function viewWelcome(){
       <div class="onb-spacer"></div>
       <button class="btn btn-primary" onclick="go('setpasscode',{setupStage:'enter',setupFirst:'',setupSecond:'',setupError:false})">Get Started</button>
       <p class="onb-sub" style="margin-top:14px;font-size:11.5px;">Everything in this app is simulated. No real payment method is ever connected.</p>
+      <p class="onb-sub" style="margin-top:0;font-size:11px;opacity:0.75;">This prototype was built with Claude, Anthropic's AI model.</p>
     </div>`;
 }
 
@@ -469,7 +472,7 @@ function viewSetPasscode(){
   const keys = [1,2,3,4,5,6,7,8,9,'',0,'⌫'];
   return `
     <div class="eyebrow" style="margin-top:26px;">Step 1 of 2</div>
-    <h1 class="pagetitle">${state.setupStage==='enter' ? 'Create a phantom passcode' : 'Confirm your passcode'}</h1>
+    <h1 class="pagetitle">${state.setupStage==='enter' ? 'Create a faux passcode' : 'Confirm your passcode'}</h1>
     <p class="sub">${state.setupStage==='enter'
       ? "Pick any 4 digits. It's only used inside Phantom Buy to mimic real checkout security — it isn't linked to any real account."
       : "Enter the same 4 digits again."}</p>
@@ -737,17 +740,17 @@ function viewConfirm(){
   return `
     <div class="stamp">
       <svg viewBox="0 0 200 200">
-        <circle cx="100" cy="100" r="92" fill="none" stroke="#7FCFA4" stroke-width="3" stroke-dasharray="4 6"/>
-        <circle cx="100" cy="100" r="76" fill="none" stroke="#7FCFA4" stroke-width="2"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="#7C98B6" stroke-width="3" stroke-dasharray="4 6"/>
+        <circle cx="100" cy="100" r="76" fill="none" stroke="#7C98B6" stroke-width="2"/>
         <path id="arcTop" d="M 30 100 A 70 70 0 0 1 170 100" fill="none"/>
         <path id="arcBot" d="M 170 100 A 70 70 0 0 1 30 100" fill="none"/>
-        <text font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#2A1B3D" letter-spacing="3">
+        <text font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#242A35" letter-spacing="3">
           <textPath href="#arcTop" startOffset="50%" text-anchor="middle">PHANTOM PURCHASE</textPath>
         </text>
-        <text font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#2A1B3D" letter-spacing="3">
+        <text font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#242A35" letter-spacing="3">
           <textPath href="#arcBot" startOffset="50%" text-anchor="middle">NO MONEY MOVED</textPath>
         </text>
-        <text x="100" y="112" font-family="Fraunces, serif" font-size="42" fill="#173323" text-anchor="middle">✓</text>
+        <text x="100" y="112" font-family="Fraunces, serif" font-size="42" fill="#242A35" text-anchor="middle">✓</text>
       </svg>
     </div>
     <h1 class="pagetitle" style="text-align:center;">Order confirmed</h1>
@@ -790,9 +793,9 @@ function viewTracking(){
 function ringSvg(pct){
   const r=17, c=2*Math.PI*r;
   const offset = c - (pct/100)*c;
-  return `<svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="${r}" fill="none" stroke="#E3F5EC" stroke-width="4"/>
-    <circle cx="22" cy="22" r="${r}" fill="none" stroke="#7FCFA4" stroke-width="4" stroke-dasharray="${c}" stroke-dashoffset="${offset}" stroke-linecap="round" transform="rotate(-90 22 22)"/>
-    <text x="22" y="26" font-size="10" text-anchor="middle" font-family="IBM Plex Mono, monospace" fill="#173323">${pct}%</text></svg>`;
+  return `<svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="${r}" fill="none" stroke="#E6ECF2" stroke-width="4"/>
+    <circle cx="22" cy="22" r="${r}" fill="none" stroke="#7C98B6" stroke-width="4" stroke-dasharray="${c}" stroke-dashoffset="${offset}" stroke-linecap="round" transform="rotate(-90 22 22)"/>
+    <text x="22" y="26" font-size="10" text-anchor="middle" font-family="IBM Plex Mono, monospace" fill="#1C232E">${pct}%</text></svg>`;
 }
 
 function viewVault(){
@@ -872,7 +875,7 @@ function viewWallet(){
         </div>`).join('')}
     <div class="eyebrow" style="margin-top:26px;">About This Prototype</div>
     <p class="sub" style="font-size:12px;line-height:1.6;">Phantom Buy is a concept prototype for a behavioral-economics habit-substitution app.</p>
-    <p class="sub" style="font-size:11.5px;line-height:1.65;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;"><strong style="color:var(--ink);">AI Disclosure:</strong> This prototype was built with an AI assistant. No real transactions, accounts, or biometric data are collected — everything runs locally in your browser session.</p>
+    <p class="sub" style="font-size:11.5px;line-height:1.65;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;"><strong style="color:var(--ink);">AI Disclosure:</strong> This prototype was built with Claude, Anthropic's AI model. No real transactions, accounts, or biometric data are collected — everything runs locally in your browser session.</p>
   `;
 }
 
