@@ -6,40 +6,45 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg-mist:#EDE7F6;
-    --surface:#FFFFFF;
-    --ink:#2A1B3D;
-    --ink-soft:#6B5B7A;
-    --coin:#F2A65A;
-    --coin-deep:#C97F35;
-    --mint:#7FCFA4;
-    --mint-soft:#E3F5EC;
-    --line:#DDD4EC;
-    --warn:#E4785C;
-    --lav:#B7A6E0;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    font-family:'Plus Jakarta Sans',sans-serif;
-    background:linear-gradient(160deg,#E4DEF6,#D9CFF0 60%,#EDE7F6);
-    min-height:100vh;
-    display:flex;align-items:center;justify-content:center;
-    padding:28px 12px;
-    color:var(--ink);
-  }
-  .phone{
-    width:390px;
-    max-width:100%;
-    height:780px;
-    background:var(--bg-mist);
-    border-radius:38px;
-    box-shadow:0 30px 60px -20px rgba(42,27,61,0.45), 0 0 0 10px #1c1226;
-    overflow:hidden;
-    position:relative;
-    display:flex;flex-direction:column;
-  }
+:root {
+  --bg-mist: #F4F5F7;       /* Slightly off-white, clean parchment look */
+  --surface: #FFFFFF;       /* Stark white for cards (like the Phantom's mask) */
+  --ink: #0A0E17;           /* Deep jet black with a midnight undertone */
+  --ink-soft: #4A5568;      /* Muted charcoal for secondary text */
+  --coin: #1E3A8A;          /* Deep dramatic blue for primary accents */
+  --coin-deep: #0F2D59;     /* Deep midnight blue for prices/currency */
+  --mint: #2B6CB0;          /* Theatrical blue for active status elements */
+  --mint-soft: #EBF8FF;     /* Ice blue wash for completed alerts */
+  --line: #E2E8F0;          /* Clean, subtle gray lines */
+  --warn: #9B1C1C;          /* Dramatic stage-curtain crimson for warnings/deletions */
+  --lav: #4A5568;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* Theatrical dark background surrounding the phone app */
+  background: linear-gradient(160deg, #070B19, #0F172A 70%, #1E293B);
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 28px 12px;
+  color: var(--ink);
+}
+
+.phone {
+  width: 390px;
+  max-width: 100%;
+  height: 780px;
+  background: var(--bg-mist);
+  border-radius: 38px;
+  /* Deep obsidian outer shadow and black physical frame ring */
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6), 0 0 0 10px #0A0E17;
+  overflow: hidden;
+  position: relative;
+  display: flex; flex-direction: column;
+}
   .statusbar{
     height:30px;flex:0 0 30px;
     display:flex;align-items:center;justify-content:space-between;
