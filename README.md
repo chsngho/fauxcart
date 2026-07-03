@@ -22,6 +22,6 @@ This project stands at the intersection of two primary economic disciplines, mod
 
 ---
 
-## 🛠️ Core Choice Architecture
+## Core Choice Architecture
 
 The application is structured around a multi-stage behavioral pipeline:
