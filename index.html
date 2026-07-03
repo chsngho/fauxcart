@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>FauxCart — Phantom Shopping</title>
+<title>Phantom Buy — Phantom Shopping</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -221,10 +221,10 @@
 </head>
 <body>
 <div class="phone">
-  <div class="statusbar"><span id="clock">9:41</span><span>FauxCart Sandbox</span></div>
+  <div class="statusbar"><span id="clock">9:41</span><span>Phantom Buy Sandbox</span></div>
   <div class="topbar">
-    <div class="wordmark">Faux<span>Cart</span></div>
-    <div class="coinpill" onclick="go('wallet')"><span class="dot"></span><span id="coinpillnum"></span> FC</div>
+    <div class="wordmark">Phantom<span>Buy</span></div>
+    <div class="coinpill" onclick="go('wallet')"><span class="dot"></span><span id="coinpillnum"></span> PC</div>
   </div>
   <div class="screen" id="screen"></div>
   <div class="navbar">
@@ -302,7 +302,7 @@ function claimDaily(){
   state.coins += 500;
   state.streak = Math.min(7, state.streak + 1);
   state.lastClaimDate = todayKey();
-  toast("500 FC claimed for today");
+  toast("500 PC claimed for today");
   render();
 }
 function findProduct(id){ return PRODUCTS.find(p=>p.id===id); }
@@ -430,7 +430,7 @@ function viewWelcome(){
   return `
     <div class="onb-wrap">
       <div class="onb-hero">🛍️</div>
-      <div class="onb-title">Welcome to FauxCart</div>
+      <div class="onb-title">Welcome to Phantom Buy</div>
       <p class="onb-sub">A phantom shopping app. Browse, buy, and "receive" packages with zero real money — built to redirect the urge to spend, not suppress it.</p>
       <div class="onb-spacer"></div>
       <button class="btn btn-primary" onclick="go('setpasscode',{setupStage:'enter',setupFirst:'',setupSecond:'',setupError:false})">Get Started</button>
@@ -478,9 +478,9 @@ function viewSetPasscode(){
   const keys = [1,2,3,4,5,6,7,8,9,'',0,'⌫'];
   return `
     <div class="eyebrow" style="margin-top:26px;">Step 1 of 2</div>
-    <h1 class="pagetitle">${state.setupStage==='enter' ? 'Create a faux passcode' : 'Confirm your passcode'}</h1>
+    <h1 class="pagetitle">${state.setupStage==='enter' ? 'Create a phantom passcode' : 'Confirm your passcode'}</h1>
     <p class="sub">${state.setupStage==='enter'
-      ? "Pick any 4 digits. It's only used inside FauxCart to mimic real checkout security — it isn't linked to any real account."
+      ? "Pick any 4 digits. It's only used inside Phantom Buy to mimic real checkout security — it isn't linked to any real account."
       : "Enter the same 4 digits again."}</p>
     <div class="dots ${state.setupError?'shake':''}">${dots}</div>
     <p style="text-align:center;font-size:12.5px;color:var(--warn);font-weight:600;height:16px;">${state.setupError ? "Didn't match — let's try again" : '&nbsp;'}</p>
@@ -511,7 +511,7 @@ function viewInterests(){
   return `
     <div class="eyebrow" style="margin-top:26px;">Step 2 of 2</div>
     <h1 class="pagetitle">What tempts you most?</h1>
-    <p class="sub">Pick a few categories. FauxCart will lead with these so the sandbox actually matches what you'd be tempted to buy for real.</p>
+    <p class="sub">Pick a few categories. Phantom Buy will lead with these so the sandbox actually matches what you'd be tempted to buy for real.</p>
     <div class="interest-grid">
       ${cats.map(c=>`
         <div class="interest-card ${state.interests.includes(c)?'selected':''}" onclick="toggleInterest('${c}')">
@@ -542,7 +542,7 @@ function viewHome(){
             <div class="thumb" style="background:${p.bg}">${p.emoji}</div>
             <p class="pname">${p.name}</p>
             <p class="pcat">${p.cat}</p>
-            <div class="pprice"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--coin);display:inline-block;"></span>${fmt(p.price)} FC</div>
+            <div class="pprice"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--coin);display:inline-block;"></span>${fmt(p.price)} PC</div>
           </div>
           <button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px;" onclick="event.stopPropagation();quickAdd(${p.id})">${state.cart.find(c=>c.id===p.id) ? '+1 more (in cart: '+state.cart.find(c=>c.id===p.id).qty+')' : '+ Add to cart'}</button>
         </div>`).join('')}
@@ -578,7 +578,7 @@ function viewProduct(){
     <h1 class="pagetitle">${p.name}</h1>
     <p class="sub">${p.blurb}</p>
     <div class="receipt" style="margin-bottom:22px;">
-      <div class="row"><span style="font-weight:600;font-size:13px;">Simulated price</span><span class="pprice">${fmt(p.price)} FC</span></div>
+      <div class="row"><span style="font-weight:600;font-size:13px;">Simulated price</span><span class="pprice">${fmt(p.price)} PC</span></div>
       <div class="row" style="margin-top:8px;"><span style="font-weight:600;font-size:13px;">Delivery</span><span style="font-size:12.5px;color:var(--ink-soft);">Standard · 48h simulated window</span></div>
       <div class="row" style="margin-top:8px;"><span style="font-weight:600;font-size:13px;">Reviews</span><span style="font-size:12.5px;color:var(--ink-soft);">★★★★☆ (simulated)</span></div>
     </div>
@@ -629,14 +629,14 @@ function viewCart(){
             </div>
           </div>
           <div style="text-align:right;">
-            <div class="pprice">${fmt(p.price*c.qty)} FC</div>
+            <div class="pprice">${fmt(p.price*c.qty)} PC</div>
             <div onclick="removeFromCart(${p.id})" style="font-size:11px;color:var(--warn);font-weight:600;cursor:pointer;margin-top:4px;">Remove</div>
           </div>
         </div>
       </div>`;
     }).join('')}
     <div class="row" style="margin:18px 0;font-weight:700;font-size:15px;">
-      <span>Total</span><span class="pprice" style="font-size:15px;">${fmt(total)} FC</span>
+      <span>Total</span><span class="pprice" style="font-size:15px;">${fmt(total)} PC</span>
     </div>
     <button class="btn btn-primary" onclick="go('checkout')">Checkout</button>
   `;
@@ -652,13 +652,13 @@ function viewCheckout(){
     <p class="sub">This is the exact friction-free moment real platforms optimize for. Notice how easy it feels.</p>
     <div class="receipt">
       <div class="row"><span style="font-size:13px;font-weight:600;">Delivery speed</span><span style="font-size:12.5px;color:var(--ink-soft);">Simulated Standard (48h)</span></div>
-      <div class="row" style="margin-top:10px;"><span style="font-size:13px;font-weight:600;">Payment method</span><span style="font-size:12.5px;color:var(--ink-soft);">FauxCoin balance</span></div>
-      <div class="row" style="margin-top:10px;"><span style="font-size:13px;font-weight:600;">Order total</span><span class="pprice">${fmt(total)} FC</span></div>
+      <div class="row" style="margin-top:10px;"><span style="font-size:13px;font-weight:600;">Payment method</span><span style="font-size:12.5px;color:var(--ink-soft);">PhantomCoin balance</span></div>
+      <div class="row" style="margin-top:10px;"><span style="font-size:13px;font-weight:600;">Order total</span><span class="pprice">${fmt(total)} PC</span></div>
     </div>
     <div class="row" style="margin:14px 0;font-size:12.5px;color:var(--ink-soft);">
-      <span>Wallet balance after order</span><span style="font-family:'IBM Plex Mono',monospace;">${fmt(state.coins - total)} FC</span>
+      <span>Wallet balance after order</span><span style="font-family:'IBM Plex Mono',monospace;">${fmt(state.coins - total)} PC</span>
     </div>
-    ${!enough ? `<p style="color:var(--warn);font-size:12.5px;font-weight:600;margin-bottom:10px;">Not enough FauxCoins. Visit your Wallet to top up your daily allowance.</p>` : ''}
+    ${!enough ? `<p style="color:var(--warn);font-size:12.5px;font-weight:600;margin-bottom:10px;">Not enough PhantomCoins. Visit your Wallet to top up your daily allowance.</p>` : ''}
     <button class="btn btn-primary" ${!enough?'disabled':''} onclick="go('auth',{authMethod:'passcode',passcodeInput:'',verifying:false,authSuccess:false})">Place Your Order</button>
   `;
 }
@@ -713,7 +713,7 @@ function viewAuth(){
     <div class="backrow" onclick="go('checkout')">← Back</div>
     <div class="eyebrow">Verify it's you</div>
     <h1 class="pagetitle">Confirm to pay</h1>
-    <p class="sub">${fmt(total)} FC · This step is a mimic — nothing is scanned, read, or stored. It just recreates the real-world checkout moment.</p>
+    <p class="sub">${fmt(total)} PC · This step is a mimic — nothing is scanned, read, or stored. It just recreates the real-world checkout moment.</p>
     <div class="chiprow">
       <div class="chip ${state.authMethod==='passcode'?'active':''}" onclick="go('auth',{authMethod:'passcode',passcodeInput:'',verifying:false,authSuccess:false})">Passcode</div>
       <div class="chip ${state.authMethod==='touch'?'active':''}" onclick="go('auth',{authMethod:'touch',passcodeInput:'',verifying:false,authSuccess:false})">Touch ID</div>
@@ -760,7 +760,7 @@ function viewConfirm(){
       </svg>
     </div>
     <h1 class="pagetitle" style="text-align:center;">Order confirmed</h1>
-    <p class="sub" style="text-align:center;">${o.id} · ${fmt(o.total)} FC · ${o.items.length} item${o.items.length>1?'s':''}</p>
+    <p class="sub" style="text-align:center;">${o.id} · ${fmt(o.total)} PC · ${o.items.length} item${o.items.length>1?'s':''}</p>
     <p class="sub" style="text-align:center;">The urge is answered. The wallet is untouched.</p>
     <button class="btn btn-mint" onclick="go('tracking',{openOrder:'${o.id}'})">Track Package</button>
     <button class="btn btn-ghost" style="margin-top:10px;" onclick="go('home')">Back to Shop</button>
@@ -847,21 +847,21 @@ function viewWallet(){
   const days = 7;
   return `
     <div class="eyebrow">Wallet</div>
-    <h1 class="pagetitle">Your FauxCoin balance</h1>
+    <h1 class="pagetitle">Your PhantomCoin balance</h1>
     <div class="walletcard">
       <div class="lbl">Available Balance</div>
-      <div class="bal">${fmt(state.coins)} FC</div>
-      <div style="font-size:12px;opacity:0.75;">${state.streak}-day streak · daily allowance 500 FC</div>
+      <div class="bal">${fmt(state.coins)} PC</div>
+      <div style="font-size:12px;opacity:0.75;">${state.streak}-day streak · daily allowance 500 PC</div>
       <div class="streakwrap">${Array.from({length:days}).map((_,i)=>`<div class="streakday ${i<state.streak?'on':''}"></div>`).join('')}</div>
     </div>
     <button class="btn ${state.lastClaimDate===todayKey() ? 'btn-ghost' : 'btn-mint'}" ${state.lastClaimDate===todayKey() ? 'disabled' : ''} onclick="claimDaily()">
-      ${state.lastClaimDate===todayKey() ? "Claimed for today ✓ — come back tomorrow" : "Claim today's 500 FC"}
+      ${state.lastClaimDate===todayKey() ? "Claimed for today ✓ — come back tomorrow" : "Claim today's 500 PC"}
     </button>
 
     <div class="fieldrow"><span>Sync to real disposable income</span>
       <input type="checkbox" ${state.budgetSync?'checked':''} onchange="state.budgetSync=this.checked;render()">
     </div>
-    <p class="sub" style="margin-top:2px;">When on, your daily FauxCoin allowance is calibrated to feel like your real spending headroom — same tension, zero real risk.</p>
+    <p class="sub" style="margin-top:2px;">When on, your daily PhantomCoin allowance is calibrated to feel like your real spending headroom — same tension, zero real risk.</p>
     ${state.budgetSync ? `
     <div class="fieldrow"><span>Simulated weekly budget</span><span id="budgetval" style="font-family:'IBM Plex Mono',monospace;">₩350,000</span></div>
     <input class="slider" type="range" min="100000" max="800000" step="10000" value="350000" oninput="document.getElementById('budgetval').textContent='₩'+Number(this.value).toLocaleString()">
@@ -876,11 +876,11 @@ function viewWallet(){
               <div style="font-weight:700;font-size:13px;">${o.id}</div>
               <div style="font-size:11.5px;color:var(--ink-soft);">${STAGES[o.stage]} · ${o.items.length} item${o.items.length>1?'s':''}</div>
             </div>
-            <div class="pprice">${fmt(o.total)} FC</div>
+            <div class="pprice">${fmt(o.total)} PC</div>
           </div>
         </div>`).join('')}
     <div class="eyebrow" style="margin-top:26px;">About This Prototype</div>
-    <p class="sub" style="font-size:12px;line-height:1.6;">FauxCart is a concept prototype for a behavioral-economics habit-substitution app.</p>
+    <p class="sub" style="font-size:12px;line-height:1.6;">Phantom Buy is a concept prototype for a behavioral-economics habit-substitution app.</p>
     <p class="sub" style="font-size:11.5px;line-height:1.65;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;"><strong style="color:var(--ink);">AI Disclosure:</strong> This prototype was built with Claude, Anthropic's AI model. No real transactions, accounts, or biometric data are collected — everything runs locally in your browser session.</p>
   `;
 }
